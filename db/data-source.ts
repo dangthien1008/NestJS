@@ -4,6 +4,7 @@ console.log(process.env.NODE_ENV);
 
 const dbConfig = {
   database: 'db.sqlite',
+  entities: ['dist/**/*.entity{.js, .ts}'],
   migrationsRun: false,
 };
 
@@ -11,6 +12,7 @@ switch (process.env.NODE_ENV) {
   case 'test':
     dbConfig.database = 'test.sqlite';
     dbConfig.migrationsRun = true;
+    dbConfig.entities = ['**/*.entity{.js,.ts}'];
     break;
   case 'production':
     break;
@@ -20,8 +22,8 @@ switch (process.env.NODE_ENV) {
 export const dataSourceOptions: DataSourceOptions = {
   type: 'sqlite',
   database: dbConfig.database,
-  entities: ['dist/**/*.entity{.js, .ts}'],
-  migrations: ['dist/db/migrations/*{.js, .ts}'],
+  entities: dbConfig.entities,
+  migrations: ['dist/db/migrations/*{.js,.ts}'],
   migrationsRun: dbConfig.migrationsRun,
 };
 

@@ -12,7 +12,7 @@ import { User } from './users/user.entity';
 import { Report } from './reports/reports.entity';
 import { dataSourceOptions } from '../db/data-source';
 
-console.log(process.env.NODE_ENV);
+console.log(dataSourceOptions);
 
 @Module({
   imports: [
