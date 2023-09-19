@@ -1,0 +1,25 @@
+### Get an estimate for an existing vehicle
+GET   http://localhost:3000/reports?make=hyundai&model=accent&year=1980&lng=0&lat=0&mileage=100000
+
+
+### Create a new report
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+    "make": "hyundai",
+    "model": "accent",
+    "year": 1982,
+    "mileage": 100000,
+    "lng": 2,
+    "lat": 2,
+    "price": 70000    
+}
+
+### Approved report
+PATCH  http://localhost:3000/reports/10
+Content-Type: application/json
+
+{
+    "approved": true
+}

@@ -1,0 +1,42 @@
+### Get User
+GET http://localhost:3000/auth/3
+
+### Get All User with email
+GET http://localhost:3000/auth?email=test@gmail.com
+
+
+### Get Me
+GET http://localhost:3000/auth/whoami
+
+### Sign Out
+POST  http://localhost:3000/auth/signout
+
+
+### Create a new User
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "test1@gmail.com",
+    "password": "password"
+}
+
+### Sign In
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "password"
+}
+
+### Update a User
+PATCH  http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+    "password": "aaa"
+}
+
+### Delete User
+DELETE  http://localhost:3000/auth/9
